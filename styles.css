@@ -1,0 +1,436 @@
+/* General Reset */
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  --webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   line-height: 1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* End General Reset */
+
+/* General Settings */
+:root {
+  /* Primary Colors */
+  --primary: hsl(223, 87%, 63%);
+  --secondary: hsl(223, 100%, 88%);
+  --tertiary: hsl(354, 100%, 66%);
+
+  /* Neutral Colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-1: hsl(0, 0%, 59%);
+  --neutral-2: hsl(0, 0%, 0%);
+  --neutral-3: hsl(209, 33%, 12%);
+
+  /* Fonts Family */
+  --ff-body: 'Libre Franklin', sans-serif;
+
+  /* Fonts Weight */
+  --fw-light: 300;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Font Size */
+  --fs-body: 1.25rem;
+  --fs-small: 0.85rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  -webkit-clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* End General Settings */
+
+/* General Styling */
+
+body {
+  background: var(--neutral-0);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-light);
+  color: var(--neutral-1);
+  font-size: var(--fs-body);
+
+  /* For this project only */
+  display: grid;
+  justify-items: center;
+  align-content: stretch;
+}
+
+/* End General Styling */
+
+/* Section Style */
+.site-logo {
+  padding-top: 3rem;
+  width: 55px;
+}
+
+section {
+  padding: 2.5rem 1.5rem;
+}
+
+.container, .text-container {
+  display: grid;
+  gap: 1.25rem;
+}
+
+section .container {
+  display: grid;
+  gap: 4rem;
+}
+
+.title, .text, .socials, form {
+  text-align: center;
+}
+
+.accent {
+  font-weight: var(--fw-bold);
+  color: var(--neutral-3);
+}
+
+.text, .copy-right {
+  font-size: 0.8rem;
+  color: var(--neutral-3);
+}
+
+.input-container {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.label {
+  margin-top: 1rem;
+}
+
+form, .label {
+  display: grid;
+  gap: 1rem;
+}
+
+form {
+  padding-inline: 1.75rem;
+}
+
+.label, .submit-btn {
+  border: 1px solid var(--secondary);
+  padding: 0.60rem 1.5rem;
+  border-radius: 20px;
+}
+
+input, .submit-btn, .error-text {
+  border: none;
+  font-size: var(--fs-small);
+}
+
+input {
+  color: var(--primary);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1px;
+  caret-color: var(--primary);
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--neutral-1);
+  font-weight: var(--fw-light);
+  letter-spacing: 0px;
+  opacity: .50;
+}
+
+.error-text {
+  padding-right: 1rem;
+  color: var(--tertiary);
+  font-weight: var(--fw-semibold); 
+  text-align: right;
+  font-style: italic;
+
+  display: none;
+  margin-top: -1rem;
+}
+
+.submit-btn {
+  cursor: pointer;
+  color: var(--neutral-0);
+  letter-spacing: 1px;
+  background: var(--primary);
+
+  box-shadow: 0px 5px 10px 1px rgba(79, 125, 243, .25);
+}
+
+.submit-btn:hover {
+  background: var(--secondary);
+  transition: 0.25s ease;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials a {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--secondary);
+  border-radius: 50px;
+
+  color: var(--primary);
+}
+
+.socials a:hover {
+  color: var(--neutral-0);
+  background: var(--primary);
+  margin-top: -5px;
+  transition: 0.25s ease;
+}
+
+.copy-right-text {
+  font-size: var(--fs-small);
+}
+
+footer {
+  padding-bottom: 3rem;
+}
+
+.thank-you {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (min-width:600px) {
+  .site-logo {
+    margin-top: 1rem;
+    width: 75px;
+  }
+
+  section .container {
+    max-width: 550px;
+    height: fit-content;
+    gap: 4rem;
+  }
+
+  .text-container {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .text {
+    font-size: var(--fs-body);
+  }
+
+  form {
+    margin-top: 0.5rem;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .input-container {
+    flex-basis: 0;
+    flex: 67.5%;
+  }
+
+  .label, .submit-btn {
+    padding: 0.875rem 0;
+    border-radius: 50px;
+  }
+
+  .label {
+    margin-top: 0;
+    padding-inline: 1.75rem;
+  }
+
+  .submit-btn {
+    align-items: baseline;
+    flex-basis: 0;
+    flex: 32.5%;
+  }
+
+}
+
+/* End Section Style */
+
+/* Animations */ 
+/*For overflow control*/
+
+.overflow-cntrl {
+  overflow: hidden;
+}
+
+.comeInLeft {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: comeInLeft 0.5s ease forwards;
+}
+
+@keyframes comeInLeft {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.comeInUp {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: comeInUp 0.5s ease forwards;
+}
+
+@keyframes comeInUp {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.comeInRight {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: comeInRight 0.5s ease forwards;
+}
+
+@keyframes comeInRight {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: fadeInDown 1.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Delays */
+.a-delay-5ms {
+  animation-delay: .5s;
+}
+
+.a-delay-1d5s {
+  animation-delay: 1.5s;
+}
+
+/* Animations End */
